@@ -62,7 +62,7 @@ mint-ui-starter项目中，已经有一些的依赖，在需用axios时，需要
 ### 6. 使用Github Pages发布服务
 - 修改`.gitignore`文件中的`/dist/`记录，让dist发布的目录能够提交
 - 修改`index.html`文件中的js为相对路径`<script src="./dist/build.js"></script>`
-- 保证webpack.config.js文件中路径也为相对路径，如下：
+- 保证`webpack.config.js`文件中`publicPath`路径也为相对路径，如下：
 ```
 entry: './src/main.js',
   output: {
