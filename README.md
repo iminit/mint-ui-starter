@@ -59,6 +59,20 @@ mint-ui-starter项目中，已经有一些的依赖，在需用axios时，需要
       });
 ```
 
+### 6. 使用Github Pages发布服务
+- 修改`.gitignore`文件中的`/dist/`记录，让dist发布的目录能够提交
+- 修改`index.html`文件中的js为相对路径`<script src="./dist/build.js"></script>`
+- 保证webpack.config.js文件中路径也为相对路径，如下：
+```
+entry: './src/main.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    publicPath: './dist/',
+    filename: 'build.js'
+  }
+```
+- 再使用`npm run build`编译，然后提交代码到github，再在项目`Settings`选项中开启Github Pages即可正常访问
+> 若访问失败，则多看看相对路径，`Crtl`+`U`看浏览器中打开的`index.html`文件的源码，点击`build.js`，把此路径按上面步骤修改正常即可
 
 
 
